@@ -1,1 +1,2 @@
-data
+# Keep data folder but ignore content
+!data/.gitkeep

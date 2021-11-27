@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:latest
+    restart: unless-stopped
+    networks:
+      - postgres-net
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ../data/mysql:/var/lib/mysql
+
+networks:
+    mysql-net:
+        external: true
