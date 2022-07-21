@@ -5,5 +5,5 @@ services:
     ports:
       - '5678:5678'
     volumes:
-      - '~/.n8n:/home/node/.n8n'
+      - '../data/n8n:/home/node/.n8n'
     image: n8nio/n8n
