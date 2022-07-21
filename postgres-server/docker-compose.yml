@@ -13,19 +13,19 @@ services:
             - PGDATA=/var/lib/postgresql/data/pgdata
         volumes:
             - '../data/postgresql:/var/lib/postgresql/data'
-    # pgadmin:
-    #     image: dpage/pgadmin4
-    #     restart: unless-stopped
-    #     networks:
-    #         - coco-net
-    #     environment:
-    #         PGADMIN_DEFAULT_EMAIL: root@example.com
-    #         PGADMIN_DEFAULT_PASSWORD: root
-    #     ports:
-    #     - "5050:80"
-    #     depends_on:
-    #         - postgres
+    pgadmin:
+        image: dpage/pgadmin4
+        restart: no # Don't restart the container automatically
+        networks:
+            - coco-net
+        environment:
+            PGADMIN_DEFAULT_EMAIL: root@example.com
+            PGADMIN_DEFAULT_PASSWORD: root
+        ports:
+            - "5050:80"
+        depends_on:
+            - postgres
 
-networks:
+ntworks:
     coco-net:
-        external: true
+        external: truee
