@@ -1,8 +1,21 @@
 version: '3.3'
 services:
   huginn:
+    container_name: huginn
+    links:
+      - 'huginn_mysql:mysql'
     ports:
       - '3000:3000'
-    volumes:
-      - '../data/huggin/mysql:/var/lib/mysql'
+    environment:
+      - HUGINN_DATABASE_NAME=huginn
+      - HUGINN_DATABASE_USERNAME=huginn
+      - HUGINN_DATABASE_PASSWORD=somethingsecret
     image: huginn/huginn
+  mysql:
+    container_name: huginn_mysql
+    environment:
+      - MYSQL_DATABASE=huginn
+      - MYSQL_USER=huginn
+      - MYSQL_PASSWORD=somethingsecret
+      - MYSQL_ROOT_PASSWORD=somethingevenmoresecret
+    image: mysql
