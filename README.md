@@ -8,10 +8,11 @@ This repository meant to manage my docker deployment container used for personal
 | Redis | `7.0.4` | [Docker Hub](https://hub.docker.com/_/redis) | |
 | MySQL | `8.0.29` | [Docker Hub](https://hub.docker.com/_/mysql) | |
 | n8n | `latest` | [Docker Hub](https://hub.docker.com/r/n8nio/n8n) | Workflow automation tool |
+| Elasticsearch | `7.15.2` |  | | |
 
 ## Prerequisite
 1. Install Docker from [here](https://docs.docker.com/desktop/install/linux-install/)
-2. Run `docker create network coco-net` to create a network that widely used in this repository.
+2. Run `docker network create dev-net` to create a network that widely used in this repository.
 
 ## External Links
 1. [Composerize](https://www.composerize.com/) is a tool to convert `docker run` command to `docker-compose.yml`

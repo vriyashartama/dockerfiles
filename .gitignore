@@ -1,2 +1,5 @@
 # Keep data folder but ignore content
 !data/.gitkeep
+
+# Ignore .env for each sub-directory
+**/.env
