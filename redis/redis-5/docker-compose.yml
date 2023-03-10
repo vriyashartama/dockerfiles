@@ -1,0 +1,11 @@
+version: "3"
+services:
+  redis-5:
+    container_name: redis-5
+    restart: unless-stopped
+    image: redis:5
+    ports:
+      - 10105:6379
+    volumes:
+      - ./data/redis/config/redis.conf:/redis.conf
+    command: ["redis-server", "/redis.conf"]
