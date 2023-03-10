@@ -1,7 +1,7 @@
 version: '3'
 services:
     postgres:
-        container_name: postgres-server
+        container_name: postgres
         image: postgres
         restart: unless-stopped
         networks:
@@ -14,8 +14,8 @@ services:
         volumes:
             - '../data/postgresql:/var/lib/postgresql/data'
     pgadmin:
+        container_name: pgadmin
         image: dpage/pgadmin4
-        restart: no # Don't restart the container automatically
         networks:
             - coco-net
         environment:
@@ -26,6 +26,6 @@ services:
         depends_on:
             - postgres
 
-ntworks:
+networks:
     coco-net:
-        external: truee
+        external: true

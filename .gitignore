@@ -3,3 +3,5 @@
 
 # Ignore .env for each sub-directory
 **/.env
+
+**/data/**
