@@ -1,12 +1,12 @@
 version: '3.3'
 services:
   mysql:
-    image: mysql:latest
+    image: hsheth2/mysql-low-memory:latest
     restart: unless-stopped
     container_name: mysql
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: password
     volumes:
       - ../data/mysql:/var/lib/mysql
